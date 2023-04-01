@@ -10,24 +10,28 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(`Field 1: ${field1}, Field 2: ${field2}`);
+    setField1("");
+    setField2("");
   };
-  
+
   return (
     <form onSubmit={handleSubmit} className="loginContainer">
       <TextField
-        label="Field 1"
+        label="email"
         value={field1}
         onChange={(e) => setField1(e.target.value)}
         margin="normal"
         variant="outlined"
+        color="primary"
         fullWidth
       />
       <TextField
-        label="Field 2"
+        label="password"
         value={field2}
         onChange={(e) => setField2(e.target.value)}
         margin="normal"
         variant="outlined"
+        color="primary"
         fullWidth
       />
       <Button type="submit" variant="contained" color="primary">
