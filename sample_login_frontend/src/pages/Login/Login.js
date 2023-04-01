@@ -8,7 +8,9 @@ import "./login.css";
 const Login = () => {
   // yup validation object
   const validate = Yup.object({
-    email: Yup.string().email("Email is invalid").required("Email is required"),
+    email: Yup.string()
+      .email("Email is invalid")
+      .required("Email is required"),
     password: Yup.string()
       .min(6, "Password must be atleast 6 charactores")
       .required("Password is required"),
@@ -31,7 +33,6 @@ const Login = () => {
           <h1>Login</h1>
           <InputField label="email" name="email" type="email" />
           <InputField label="password" name="password" type="password" />
-
           <Button type="submit" variant="contained" color="primary">
             Login
           </Button>
