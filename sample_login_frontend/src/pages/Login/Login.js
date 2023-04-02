@@ -8,9 +8,8 @@ import "./login.css";
 const Login = () => {
   // yup validation object
   const validate = Yup.object({
-    email: Yup.string()
-      .email("Email is invalid")
-      .required("Email is required"),
+    userName: Yup.string()
+      .required("User name is required"),
     password: Yup.string()
       .min(6, "Password must be atleast 6 charactores")
       .required("Password is required"),
@@ -19,19 +18,19 @@ const Login = () => {
   return (
     <Formik
       initialValues={{
-        email: "",
+        userName: "",
         password: "",
       }}
       validationSchema={validate}
       onSubmit={(values) =>
-        console.log(`Email : ${values.email}\nPassword : ${values.password}`)
+        console.log(`User Name : ${values.userName}\nPassword : ${values.password}`)
       }
     >
       {(formik) => (
         <Form>
           {console.log(formik.values)}
           <h1>Login</h1>
-          <InputField label="email" name="email" type="email" />
+          <InputField label="user name" name="userName" type="text" />
           <InputField label="password" name="password" type="password" />
           <Button type="submit" variant="contained" color="primary">
             Login
